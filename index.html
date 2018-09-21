@@ -8,7 +8,7 @@
         #dadiv {
             margin: 20px;
         }
-        #btn {
+        .button {
             color: #112730;
             text-decoration: none;
             font-size: 2rem;
@@ -20,15 +20,17 @@
             display: inline-block;
             transition: background-color 300ms ease-in-out;
         }
-        #btn:hover {
+        .button:hover {
             background-color: #2f7e9b;
         }
     </style>
 </head>
 <body>
     <div id="dadiv">
-        <a id="btn" href="#" onclick="axios.get('https://d1xgw2kh95.execute-api.us-east-1.amazonaws.com/prod').then(r => document.getElementById('out').innerHTML=JSON.stringify('The server says: ' + r.data.status))">Do the big scary thing (it takes like quite a fair bit of time sometimes)!</a>
-        <pre id="out"></pre>
+        <a class="button" href="#" onclick="axios.get('https://d1xgw2kh95.execute-api.us-east-1.amazonaws.com/prod').then(r => document.getElementById('out1').innerHTML=JSON.stringify('The server says: ' + r.data.status))">Do the big scary thing (it takes like quite a fair bit of time sometimes)!</a>
+        <pre id="out1"></pre>
+        <a class="button" href="#" onclick="axios.post('https://api.netlify.com/build_hooks/5ba5126f4ed62f21c7e67187').then(r => document.getElementById('out2').innerHTML=JSON.stringify('The server says: ' + r.data))">Do the other big scary thing, you know, the one that Yoni thinks is scarier!</a>
+        <pre id="out2"></pre>
     </div>
 </body>
 </html>
